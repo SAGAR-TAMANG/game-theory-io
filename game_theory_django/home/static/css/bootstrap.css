@@ -12075,7 +12075,7 @@ textarea.form-control-lg {
 
 .home_screen .video {
   background-color: black;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
@@ -12085,28 +12085,28 @@ textarea.form-control-lg {
 
 .home_screen .play_button {
   position: absolute;
-  font-size: 4rem;
+  font-size: 2rem;
   font-family: "Press Start 2P", system-ui;
   color: white;
   
-  top: 30%;
-  left: 80%;
+  top: 20%;
+  left: 85%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .home_screen .about {
   position: absolute;
-  font-size: 4rem;
+  font-size: 2rem;
   font-family: "Press Start 2P", system-ui;
   color: white;
   
-  top: 60%;
-  left: 80%;
+  top: 30%;
+  left: 85%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .home_screen a:hover {
-  color: orange;
+  color: red;
 }

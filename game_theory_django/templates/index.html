@@ -2,17 +2,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Game Theory</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 </head>
-<body>  
+
+<body>
   <div class="home_screen">
-    <video src="{% static 'video/initial.mp4' %}" width="100%" class="video"></video>
+    <video src="{% static 'video/initial.mp4' %}" width="100%" class="video" autoplay muted></video>
     <a class="play_button" href="#">Play</a>
     <a class="about" href="#">About</a>
   </div>
+
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>
