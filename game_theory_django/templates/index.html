@@ -1,11 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>The Game Theory</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 </head>
-<body>
-  Hi
+<body>  
+  <div class="home_screen">
+    <video src="{% static 'video/initial.mp4' %}" width="100%" class="video"></video>
+    <a class="play_button" href="#">Play</a>
+    <a class="about" href="#">About</a>
+  </div>
 </body>
 </html>
