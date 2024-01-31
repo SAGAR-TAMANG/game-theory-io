@@ -12,8 +12,8 @@
 
 <body>
   <div class="home_screen">
-    <video src="{% static 'video/initial.mp4' %}" width="100%" class="video" autoplay muted></video>
-    <a class="play_button" href="{% url 'play' %}">Play</a>
+    <video src="{% static 'video/' %}{{ choice }}" width="100%" class="video" autoplay muted></video>
+    <a class="play_button" href="#">Play</a>
     <a class="about" href="#">About</a>
   </div>
 
