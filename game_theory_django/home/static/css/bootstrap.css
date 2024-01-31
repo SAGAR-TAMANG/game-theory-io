@@ -12120,3 +12120,49 @@ textarea.form-control-lg {
 .home_screen a:hover {
   color: #6f0029;
 }
+
+.tutorial_card {
+  /* position: absolute; */
+  height: 40vw;
+  width: 50vw;
+
+  /* top: 50%;
+  left: 50%; */
+  transform: translate(50%, 0);
+  transition: transform 80ms ease-in-out;
+
+  background: rgba(255, 255, 255, 0.776);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 13px );
+  -webkit-backdrop-filter: blur( 13px );
+  border-radius: 10px;
+  border: 10px solid hsla(338, 100%, 22%, 0.247);
+}
+
+.game-font {
+  font-family: "Press Start 2P", system-ui;
+}
+
+.text-maroon {
+  color: #6f0029;
+}
+
+.home_screen .score-board {
+  position: absolute;
+  font-size: 1rem;
+  font-family: "Press Start 2P", system-ui;
+  color: #d7d8d5;
+  
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.score-board .cooperate {
+  color: green;
+}
+
+.score-board .defect {
+  color: red;
+}

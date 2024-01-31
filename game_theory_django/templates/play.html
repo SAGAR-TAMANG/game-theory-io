@@ -12,11 +12,54 @@
 
 <body>
   <div class="home_screen">
-    <video src="{% static 'video/' %}{{ choice }}" width="100%" class="video" autoplay muted></video>
-    <a class="play_button" href="#">Play</a>
-    <a class="about" href="#">About</a>
+    <video src="{% static 'video/' %}" width="100%" class="video" autoplay muted></video>
+
+    <dir class="score-board">
+      <p class="fs-1">CPU</p>
+      {% for i in choice_list %}
+      <p id="choice_{{ forloop.counter }}" style="display: none;" class="{{ i }}">{{ i }}</p>
+      {% endfor %}
+    </dir>
+
   </div>
 
   <script src="{% static 'js/app.js' %}"></script>
+  <script>
+    console.log("THIS IS IT");
+    var count = 1;
+    var video = document.querySelector('.video');
+
+    // Define an array of video sources and durations
+    var videoSequence = [
+      {% for i in choice_list %}
+
+    { src: "static/video/{{ i }}.mp4", duration: 10000 },   // 10 seconds
+
+    {% endfor %}
+    ];
+
+    function playNextVideo() {
+      var currentVideo = videoSequence[count % videoSequence.length];
+      var cpuMoves = document.getElementById("choice_" + count);
+
+      // Set the video source and loop
+      video.src = currentVideo.src;
+      setTimeout(function () {
+        cpuMoves.style.display = 'block';
+      }, currentVideo.duration);
+
+      // Increment count for the next iteration
+      count++;
+
+      console.log("Current Video: " + currentVideo.src);
+      console.log("Choices: " + cpuMoves.innerHTML  )
+      // Schedule the next video after the specified duration
+      setTimeout(playNextVideo, currentVideo.duration);
+    }
+
+    // Start the sequence
+    playNextVideo();  
+  </script>
 </body>
+
 </html>

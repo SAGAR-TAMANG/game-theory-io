@@ -13,8 +13,31 @@
 <body>
   <div class="home_screen">
     <video src="{% static 'video/initial.mp4' %}" width="100%" class="video" autoplay muted></video>
-    <a class="play_button" href="{% url 'play' %}">Play</a>
+    <a class="play_button" href="#">Play</a>
     <a class="about" href="#">About</a>
+
+    <dir class="tutorial_card p-5 game-font text-maroon" style="background-image: url("{% static 'images/retro-bg.jpg' %}");">
+      <dir class="d-flex row">
+        <div class="col-12">
+          <p class="text-center fs-2">
+            Before We Continue
+            <br>
+            Want to have a quick tutorial? 
+            <br>
+            <br>
+            <br>
+            (It will only take 1 minute)
+          </p>
+        </div>
+        <div class="col-12">
+          <dir class="d-flex justify-content-between p-5">
+            <a class="fs-2 px-5 py-3" href="#">Continue</a>
+            <a class="fs-2 px-5 py-3" href="{% url 'play' %}">Skip</a>
+          </dir>
+        </div>
+      </dir>
+    </dir>
+
   </div>
 
   <script src="{% static 'js/app.js' %}"></script>
