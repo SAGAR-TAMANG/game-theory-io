@@ -19,7 +19,7 @@ if (currentFileName == '') {
 
     playButton.addEventListener('click', function () {
       console.log("CLICKED");
-      tutorialCard.style.transform = "translate(50%, -110%)";
+      tutorialCard.style.transform = "translate(10%, -90vh)";
     });
   });
 }

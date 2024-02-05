@@ -7804,6 +7804,18 @@ textarea.form-control-lg {
   justify-content: space-between !important;
 }
 
+.justify-content-between-special {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+@media (max-width: 768px) {
+  .justify-content-between-special {
+    display: block;
+    justify-content: center !important;
+  }
+}
+
 .justify-content-around {
   justify-content: space-around !important;
 }
@@ -12102,10 +12114,10 @@ textarea.form-control-lg {
   top: 20%;
   left: 85%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
 }
 
-.home_screen .about {
+.home_screen .about_button {
   position: absolute;
   font-size: 2rem;
   font-family: "Press Start 2P", system-ui;
@@ -12114,7 +12126,7 @@ textarea.form-control-lg {
   top: 30%;
   left: 85%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
 }
 
 .home_screen a:hover {
@@ -12122,9 +12134,9 @@ textarea.form-control-lg {
 }
 
 .tutorial_card {
-  /* position: absolute; */
-  height: 40vw;
-  width: 50vw;
+  position: absolute;
+  height: 80vh;
+  width: 80vw;
 
   /* top: 50%;
   left: 50%; */
@@ -12137,6 +12149,15 @@ textarea.form-control-lg {
   -webkit-backdrop-filter: blur( 13px );
   border-radius: 10px;
   border: 10px solid hsla(338, 100%, 22%, 0.247);
+
+  font-size: 2rem;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .tutorial_card {
+    font-size: 1rem;
+  }
 }
 
 .game-font {
