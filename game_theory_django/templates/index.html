@@ -16,7 +16,7 @@
     <a class="play_button" href="#">Play</a>
     <a class="about_button" href="#">About</a>
 
-    <dir class="tutorial_card p-3 game-font text-maroon d-flex row align-items-center" style="background-image: url(" {%
+    <div class="tutorial_card p-3 game-font text-maroon d-flex row align-items-center" style="background-image: url(" {%
       static 'images/retro-bg.jpg' %}");">
       <div class="col-12">
         <p class="text-center">
@@ -32,11 +32,10 @@
       <div class="col-12">
         <dir class="justify-content-between-special">
           <a class="px-5 py-3" href="#">Continue</a>
-          <a class="px-5 py-3" href="{% url 'play' %}">Skip</a>
+          <a class="px-5 py-3" href="#" id="skipBtn">Skip</a>
         </dir>
       </div>
-    </dir>
-
+    </div>
   </div>
 
   <script src="{% static 'js/app.js' %}"></script>

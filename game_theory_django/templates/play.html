@@ -38,6 +38,8 @@
     {% endfor %}
     ];
 
+    console.log("Video Sequence: ", videoSequence);
+
     function playNextVideo() {
       var currentVideo = videoSequence[count % videoSequence.length];
       var cpuMoves = document.getElementById("choice_" + count);

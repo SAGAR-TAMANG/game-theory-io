@@ -21,6 +21,27 @@ if (currentFileName == '') {
       console.log("CLICKED");
       tutorialCard.style.transform = "translate(10%, -90vh)";
     });
+
+    skipButton = document.getElementById('skipBtn');
+
+    skipButton.addEventListener('click', function () {
+      tutorialCard.innerHTML = `
+      <div class="col-12">
+        <p class="text-center">
+          Select the game type
+          <br>
+          <br>
+          <br>
+        </p>
+      </div>
+      <div class="col-12">
+        <dir class="justify-content-between-special">
+          <a class="px-5 py-3" href="#">Human-CPU Duel</a>
+          <a class="px-5 py-3" href="/play">CPU Solitaire</a>
+        </dir>
+      </div>
+    `;      
+    });
   });
 }
 
