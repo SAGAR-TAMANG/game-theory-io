@@ -1,16 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Game Theory</title>
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-</head>
-
-<body>
   <div class="home_screen">
     <video src="{% static 'video/' %}" width="100%" class="video" autoplay muted></video>
 
@@ -20,10 +10,9 @@
       <p id="choice_{{ forloop.counter }}" style="display: none;" class="{{ i }}">{{ i }}</p>
       {% endfor %}
     </dir>
-
   </div>
 
-  <script src="{% static 'js/app.js' %}"></script>
+
   <script>
     console.log("THIS IS IT");
     var count = 1;
@@ -33,15 +22,17 @@
     var videoSequence = [
       {% for i in choice_list %}
 
-    { src: "static/video/{{ i }}.mp4", duration: 10000 },   // 10 seconds
+    { src: "/static/video/{{ i }}.mp4", duration: 10000 },   // 10 seconds
 
     {% endfor %}
     ];
 
+    videoSequence[10] = { src: "/static/video/finish.mp4", duration: 10000 };
+
     console.log("Video Sequence: ", videoSequence);
 
     function playNextVideo() {
-      var currentVideo = videoSequence[count % videoSequence.length];
+      var currentVideo = videoSequence[count-1];
       var cpuMoves = document.getElementById("choice_" + count);
 
       // Set the video source and loop
@@ -49,19 +40,18 @@
       setTimeout(function () {
         cpuMoves.style.display = 'block';
       }, currentVideo.duration);
-
+      setTimeout(playNextVideo, currentVideo.duration);
+      
+      console.log("Current Video: " + currentVideo.src);
+      console.log("Choices: " + cpuMoves.innerHTML);
+      console.log("Count: " + count);
       // Increment count for the next iteration
       count++;
 
-      console.log("Current Video: " + currentVideo.src);
-      console.log("Choices: " + cpuMoves.innerHTML  )
       // Schedule the next video after the specified duration
-      setTimeout(playNextVideo, currentVideo.duration);
     }
 
     // Start the sequence
     playNextVideo();  
   </script>
-</body>
-
-</html>
+{% endblock %}
